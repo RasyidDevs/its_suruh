@@ -34,7 +34,12 @@
   --color-ring: var(--ring);
   --font-display: "Plus Jakarta Sans", system-ui, sans-serif;
   --font-sans: "Inter", system-ui, sans-serif;
-  --gradient-hero: linear-gradient(135deg, var(--primary) 0%, oklch(0.32 0.08 230) 60%, var(--secondary) 100%);
+  --gradient-hero: linear-gradient(
+    135deg,
+    var(--primary) 0%,
+    oklch(0.32 0.08 230) 60%,
+    var(--secondary) 100%
+  );
   --gradient-accent: linear-gradient(135deg, var(--secondary), var(--tertiary));
   --shadow-soft: 0 4px 24px -8px color-mix(in oklab, var(--primary) 18%, transparent);
   --shadow-glow: 0 20px 60px -20px color-mix(in oklab, var(--secondary) 35%, transparent);
@@ -43,40 +48,50 @@
 :root {
   --radius: 1rem;
   /* primary #132d4e */
-  --primary: oklch(0.27 0.062 251);
+  --primary: #132d4e;
   --primary-foreground: oklch(0.985 0 0);
   /* secondary #0d7a5f */
-  --secondary: oklch(0.55 0.115 168);
+  --secondary: #0d7a5f;
   --secondary-foreground: oklch(0.985 0 0);
   /* tertiary #fbbf24 */
-  --tertiary: oklch(0.82 0.16 84);
-  --tertiary-foreground: oklch(0.27 0.062 251);
+  --tertiary: #fbbf24;
+  --tertiary-foreground: #132d4e;
   /* neutral #f3f4f6 */
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.27 0.062 251);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.27 0.062 251);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.27 0.062 251);
-  --muted: oklch(0.965 0.003 247);
-  --muted-foreground: oklch(0.5 0.03 251);
-  --accent: oklch(0.95 0.04 168);
-  --accent-foreground: oklch(0.27 0.062 251);
+  --background: #f3f4f6;
+  --foreground: #132d4e;
+  --card: #ffffff;
+  --card-foreground: #132d4e;
+  --popover: #ffffff;
+  --popover-foreground: #132d4e;
+  --muted: #e5e7eb;
+  --muted-foreground: #6b7280;
+  --accent: #c7f0d8;
+  --accent-foreground: #132d4e;
   --destructive: oklch(0.6 0.22 25);
   --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(0.91 0.01 247);
-  --input: oklch(0.91 0.01 247);
-  --ring: oklch(0.55 0.115 168);
+  --border: #d1d5db;
+  --input: #d1d5db;
+  --ring: #0d7a5f;
 }
 
 @layer base {
-  * { border-color: var(--color-border); }
-  html { scroll-behavior: smooth; }
+  * {
+    border-color: var(--color-border);
+  }
+  html {
+    scroll-behavior: smooth;
+  }
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
   }
-  h1, h2, h3, h4 { font-family: var(--font-display); letter-spacing: -0.02em; }
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+  }
 }
