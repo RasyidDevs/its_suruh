@@ -25,6 +25,23 @@ import {
   Smartphone,
   Award,
   Play,
+  Handshake,
+  UserCheck,
+  ShieldCheck,
+  CreditCard,
+  Star,
+  Search,
+  Bell,
+  MessageSquare,
+  Camera,
+  FileCheck,
+  Fingerprint,
+  BadgeCheck,
+  Banknote,
+  ArrowLeftRight,
+  QrCode,
+  Receipt,
+  Zap,
 } from "lucide-react";
 import { useState } from "react";
 import logoImg from "@/assets/logo its suruh.png";
@@ -255,11 +272,10 @@ function Landing() {
     { href: "#tentang", label: "Tentang" },
     { href: "#layanan", label: "Layanan" },
     { href: "#cara-kerja", label: "Cara Kerja" },
-    { href: "#visi-misi", label: "Visi & Misi" },
+    { href: "#features", label: "Features" },
     { href: "#design-process", label: "Design Process" },
     { href: "#demo", label: "Demo" },
     { href: "#our-team", label: "Our Team" },
-    { href: "#kontak", label: "Kontak" },
   ];
 
   return (
@@ -280,7 +296,7 @@ function Landing() {
             ))}
           </ul>
           <a
-            href="#kontak"
+            href="#features"
             className="hidden md:inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-5 py-2.5 text-sm font-semibold hover:bg-primary/90 transition shadow-[var(--shadow-soft)]"
           >
             Coba Sekarang <ArrowRight className="h-4 w-4" />
@@ -541,43 +557,189 @@ function Landing() {
         </div>
       </section>
 
-      {/* VISI MISI */}
-      <section
-        id="visi-misi"
-        className="py-24 md:py-32 bg-primary text-primary-foreground relative overflow-hidden"
-      >
-        <div className="absolute -top-24 -left-24 w-96 h-96 rounded-full bg-secondary/30 blur-3xl" />
-        <div className="absolute -bottom-32 -right-10 w-[500px] h-[500px] rounded-full bg-tertiary/15 blur-3xl" />
-        <div className="mx-auto max-w-7xl px-6 grid md:grid-cols-2 gap-16 relative">
-          <div>
-            <span className="text-sm font-semibold text-tertiary uppercase tracking-wider">
-              Visi
+      {/* MAIN FEATURES */}
+      <section id="features" className="py-24 md:py-32 bg-muted/50">
+        <div className="mx-auto max-w-7xl px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="text-center mb-20"
+          >
+            <span className="inline-flex items-center gap-2 rounded-full bg-white/10 border border-white/20 px-4 py-1.5 text-xs font-medium backdrop-blur text-primary">
+              <Zap className="h-3.5 w-3.5 text-secondary" /> Main Features
             </span>
-            <h2 className="mt-3 text-3xl md:text-5xl font-bold leading-tight">
-              Platform mikro-jasa <span className="text-tertiary">terpercaya</span> antar mahasiswa
-              ITS.
+            <h2 className="mt-6 text-3xl md:text-5xl font-bold mb-4">
+              Fitur <span className="text-secondary">Utama</span>
             </h2>
-            <p className="mt-6 text-white/80 text-lg leading-relaxed">
-              Menjadi platform mikro-jasa antar mahasiswa ITS yang terpercaya, cepat, dan efisien
-              untuk membantu kebutuhan sehari-hari mahasiswa serta membuka peluang penghasilan
-              tambahan di lingkungan kampus.
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Jelajahi fitur-fitur lengkap ITSuruh yang dirancang untuk pengalaman terbaik bagi User maupun Helper.
             </p>
-          </div>
-          <div>
-            <span className="text-sm font-semibold text-tertiary uppercase tracking-wider">
-              Misi
-            </span>
-            <ul className="mt-6 space-y-5">
-              {missions.map((m, i) => (
-                <li key={i} className="flex gap-4">
-                  <div className="h-10 w-10 rounded-full bg-tertiary text-tertiary-foreground grid place-items-center font-bold shrink-0">
-                    {i + 1}
+          </motion.div>
+
+          {/* Feature Category 1: Helper Features */}
+          <motion.div
+            initial={{ opacity: 0, y: 32 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.6 }}
+            className="mb-12"
+          >
+            <div className="rounded-3xl border border-border bg-card overflow-hidden">
+              <div className="bg-gradient-to-r from-blue-500 to-cyan-500 p-6 md:p-8">
+                <div className="flex items-center gap-4">
+                  <div className="h-14 w-14 rounded-2xl bg-white/20 backdrop-blur grid place-items-center">
+                    <Handshake className="h-7 w-7 text-white" />
                   </div>
-                  <p className="text-white/85 text-lg pt-1.5">{m}</p>
-                </li>
-              ))}
-            </ul>
-          </div>
+                  <div>
+                    <h3 className="text-2xl md:text-3xl font-bold text-white">Helper Features</h3>
+                    <p className="text-white/80 text-sm mt-1">Fitur untuk mahasiswa yang ingin jadi Helper dan dapat cuan</p>
+                  </div>
+                </div>
+              </div>
+              <div className="p-6 md:p-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                {[
+                  { icon: Search, title: "Cari Order", desc: "Temukan order terdekat yang sesuai dengan lokasi dan ketersediaanmu." },
+                  { icon: Bell, title: "Notifikasi Real-time", desc: "Dapatkan notifikasi instan saat ada order baru di sekitarmu." },
+                  { icon: Wallet, title: "Dashboard Penghasilan", desc: "Pantau total pendapatan, riwayat order, dan statistik performa." },
+                  { icon: Star, title: "Rating & Review", desc: "Kumpulkan rating positif untuk meningkatkan kepercayaan User." },
+                  { icon: MapPin, title: "Navigasi Lokasi", desc: "Petunjuk arah otomatis ke lokasi pick-up dan drop-off." },
+                  { icon: MessageSquare, title: "Chat dengan User", desc: "Komunikasi langsung dengan User untuk detail pesanan." },
+                ].map((f, i) => (
+                  <div key={i} className="group rounded-2xl border border-border p-5 hover:border-blue-300 hover:shadow-md transition-all">
+                    <div className="h-10 w-10 rounded-xl bg-blue-500/10 text-blue-500 grid place-items-center mb-4 group-hover:bg-blue-500 group-hover:text-white transition-colors">
+                      <f.icon className="h-5 w-5" />
+                    </div>
+                    <h4 className="font-semibold text-foreground">{f.title}</h4>
+                    <p className="mt-1.5 text-sm text-muted-foreground">{f.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Feature Category 2: User Features */}
+          <motion.div
+            initial={{ opacity: 0, y: 32 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="mb-12"
+          >
+            <div className="rounded-3xl border border-border bg-card overflow-hidden">
+              <div className="bg-gradient-to-r from-emerald-500 to-teal-500 p-6 md:p-8">
+                <div className="flex items-center gap-4">
+                  <div className="h-14 w-14 rounded-2xl bg-white/20 backdrop-blur grid place-items-center">
+                    <UserCheck className="h-7 w-7 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-2xl md:text-3xl font-bold text-white">User Features</h3>
+                    <p className="text-white/80 text-sm mt-1">Fitur untuk mahasiswa yang ingin menyuruh dan hemat waktu</p>
+                  </div>
+                </div>
+              </div>
+              <div className="p-6 md:p-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                {[
+                  { icon: ShoppingCart, title: "Buat Pesanan", desc: "Buat suruhan dengan mudah — pilih jenis, isi detail, kirim." },
+                  { icon: Clock, title: "Tracking Real-time", desc: "Pantau status pesanan secara langsung dari awal hingga selesai." },
+                  { icon: Star, title: "Beri Rating", desc: "Nilai performa Helper setelah pesanan selesai." },
+                  { icon: MessageSquare, title: "Chat dengan Helper", desc: "Koordinasi langsung dengan Helper untuk detail pesanan." },
+                  { icon: FileText, title: "Riwayat Pesanan", desc: "Akses seluruh histori pesanan yang pernah dibuat." },
+                  { icon: Bell, title: "Update Status", desc: "Notifikasi otomatis setiap ada perubahan status pesanan." },
+                ].map((f, i) => (
+                  <div key={i} className="group rounded-2xl border border-border p-5 hover:border-emerald-300 hover:shadow-md transition-all">
+                    <div className="h-10 w-10 rounded-xl bg-emerald-500/10 text-emerald-500 grid place-items-center mb-4 group-hover:bg-emerald-500 group-hover:text-white transition-colors">
+                      <f.icon className="h-5 w-5" />
+                    </div>
+                    <h4 className="font-semibold text-foreground">{f.title}</h4>
+                    <p className="mt-1.5 text-sm text-muted-foreground">{f.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Feature Category 3: Verification Features */}
+          <motion.div
+            initial={{ opacity: 0, y: 32 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="mb-12"
+          >
+            <div className="rounded-3xl border border-border bg-card overflow-hidden">
+              <div className="bg-gradient-to-r from-purple-500 to-pink-500 p-6 md:p-8">
+                <div className="flex items-center gap-4">
+                  <div className="h-14 w-14 rounded-2xl bg-white/20 backdrop-blur grid place-items-center">
+                    <ShieldCheck className="h-7 w-7 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-2xl md:text-3xl font-bold text-white">Verification Features</h3>
+                    <p className="text-white/80 text-sm mt-1">Keamanan dan verifikasi identitas mahasiswa ITS</p>
+                  </div>
+                </div>
+              </div>
+              <div className="p-6 md:p-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                {[
+                  { icon: BadgeCheck, title: "Verifikasi Mahasiswa", desc: "Otentikasi melalui email @its.ac.id untuk memastikan pengguna asli." },
+                  { icon: Fingerprint, title: "KTM Verification", desc: "Validasi KTM sebagai bukti identitas mahasiswa ITS yang aktif." },
+                  { icon: Camera, title: "Foto Selfie", desc: "Verifikasi wajah untuk keamanan dan kepercayaan tambahan." },
+                  { icon: Shield, title: "Trusted Badge", desc: "Badge khusus untuk Helper yang telah terverifikasi lengkap." },
+                  { icon: FileCheck, title: "Dokumen Terverifikasi", desc: "Status verifikasi dokumen ditampilkan di profil pengguna." },
+                  { icon: Users, title: "Komunitas Aman", desc: "Seluruh pengguna adalah mahasiswa ITS — lingkungan terpercaya." },
+                ].map((f, i) => (
+                  <div key={i} className="group rounded-2xl border border-border p-5 hover:border-purple-300 hover:shadow-md transition-all">
+                    <div className="h-10 w-10 rounded-xl bg-purple-500/10 text-purple-500 grid place-items-center mb-4 group-hover:bg-purple-500 group-hover:text-white transition-colors">
+                      <f.icon className="h-5 w-5" />
+                    </div>
+                    <h4 className="font-semibold text-foreground">{f.title}</h4>
+                    <p className="mt-1.5 text-sm text-muted-foreground">{f.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Feature Category 4: Payment / Top Up / Transfer */}
+          <motion.div
+            initial={{ opacity: 0, y: 32 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+          >
+            <div className="rounded-3xl border border-border bg-card overflow-hidden">
+              <div className="bg-gradient-to-r from-amber-500 to-orange-500 p-6 md:p-8">
+                <div className="flex items-center gap-4">
+                  <div className="h-14 w-14 rounded-2xl bg-white/20 backdrop-blur grid place-items-center">
+                    <CreditCard className="h-7 w-7 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-2xl md:text-3xl font-bold text-white">Payment / Top Up / Transfer</h3>
+                    <p className="text-white/80 text-sm mt-1">Sistem pembayaran yang mudah, cepat, dan transparan</p>
+                  </div>
+                </div>
+              </div>
+              <div className="p-6 md:p-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                {[
+                  { icon: Wallet, title: "E-Wallet ITSuruh", desc: "Saldo digital untuk transaksi cepat tanpa repot tukar uang cash." },
+                  { icon: Banknote, title: "Top Up Saldo", desc: "Isi saldo mudah melalui berbagai metode pembayaran." },
+                  { icon: ArrowLeftRight, title: "Transfer Antar User", desc: "Kirim saldo ke sesama pengguna ITSuruh dengan instan." },
+                  { icon: QrCode, title: "QR Payment", desc: "Bayar pesanan dengan scan QR code untuk kemudahan transaksi." },
+                  { icon: Receipt, title: "Riwayat Transaksi", desc: "Catatan lengkap semua transaksi masuk dan keluar." },
+                  { icon: Shield, title: "Pembayaran Aman", desc: "Sistem escrow — uang ditahan hingga pesanan selesai." },
+                ].map((f, i) => (
+                  <div key={i} className="group rounded-2xl border border-border p-5 hover:border-amber-300 hover:shadow-md transition-all">
+                    <div className="h-10 w-10 rounded-xl bg-amber-500/10 text-amber-500 grid place-items-center mb-4 group-hover:bg-amber-500 group-hover:text-white transition-colors">
+                      <f.icon className="h-5 w-5" />
+                    </div>
+                    <h4 className="font-semibold text-foreground">{f.title}</h4>
+                    <p className="mt-1.5 text-sm text-muted-foreground">{f.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </motion.div>
         </div>
       </section>
 
@@ -852,38 +1014,6 @@ function Landing() {
         </div>
       </section>
 
-      {/* CTA / KONTAK */}
-      <section id="kontak" className="py-24 md:py-32">
-        <div className="mx-auto max-w-5xl px-6">
-          <div
-            className="rounded-[2rem] p-10 md:p-16 text-center text-primary-foreground relative overflow-hidden"
-            style={{ background: "var(--gradient-accent)" }}
-          >
-            <h2 className="text-3xl md:text-5xl font-extrabold">
-              Siap mulai? Suruh sana, suruh sini.
-            </h2>
-            <p className="mt-5 text-white/90 text-lg max-w-2xl mx-auto">
-              Bergabung jadi User atau Helper hari ini. Hemat waktu, tambah cuan, bantu sesama warga
-              ITS.
-            </p>
-            <div className="mt-8 flex flex-wrap justify-center gap-4">
-              <a
-                href="mailto:kelompok7dppa@gmail.com"
-                className="inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-7 py-3.5 font-semibold hover:bg-primary/90 transition"
-              >
-                <Mail className="h-4 w-4" /> Hubungi Kami
-              </a>
-              <a
-                href="#layanan"
-                className="inline-flex items-center gap-2 rounded-full bg-white/15 border border-white/30 backdrop-blur px-7 py-3.5 font-semibold hover:bg-white/25 transition"
-              >
-                Jelajahi Layanan
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* FOOTER */}
       <footer className="border-t border-border bg-muted/40">
         <div className="mx-auto max-w-7xl px-6 py-12 grid md:grid-cols-4 gap-8">
@@ -912,8 +1042,8 @@ function Landing() {
                 </a>
               </li>
               <li>
-                <a href="#visi-misi" className="hover:text-primary">
-                  Visi & Misi
+                <a href="#features" className="hover:text-primary">
+                  Features
                 </a>
               </li>
               <li>
