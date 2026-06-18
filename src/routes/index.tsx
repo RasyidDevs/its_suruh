@@ -173,6 +173,10 @@ const designSteps = [
         label: "LoFi Wireframe",
         url: "https://app.visily.ai/projects/2b5dd521-9ad7-490e-9b23-295910273945/boards/2606467",
       },
+      {
+        label: "Laporan",
+        url: "https://drive.google.com/file/d/1mG5gAEJ2C9QVJ8ByNUSnaQViSgp0Av42/view?usp=sharing",
+      },
     ],
   },
   {
@@ -186,6 +190,14 @@ const designSteps = [
       {
         label: "Med-Fi Design",
         url: "https://www.figma.com/proto/EV0okwVGLoRADx1G2NzyMY/ITSuruh?node-id=0-1&t=Qp91a7Aw3SeUkeuw-1",
+      },
+      {
+        label: "PPT Med-FI",
+        url: "https://drive.google.com/file/d/1iLWxyI3DEVjZ7RnkRMYsjT_1ZV1GoLPo/view?usp=drive_link",
+      },
+      {
+        label: "ReadMe Med-Fi",
+        url: "https://drive.google.com/file/d/1CGUAvpOf4J7vlkLcKmje5y0YVA3pHKfL/view?usp=drive_link",
       },
     ],
   },
@@ -214,6 +226,10 @@ const designSteps = [
       {
         label: "HiFi Design",
         url: "https://www.figma.com/proto/LHxfemvU5gImKqmbLnIjJp/ITSuruh--Copy-?node-id=0-1&t=xWkNGyYoaJ95crVU-1",
+      },
+      {
+        label: "Final Report HighFI",
+        url: "https://drive.google.com/file/d/1eofzDp_XuuOWAd8Eq7MXxaZgBXOJKmcc/view",
       },
     ],
   },
@@ -696,7 +712,7 @@ function Landing() {
               <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
                 <iframe
                   className="absolute inset-0 w-full h-full"
-                  src="https://www.youtube.com/embed/vAG8sofHnhA"
+                  src="https://www.youtube.com/embed/sbO5CsvAGc8"
                   title="ITSuruh Demo Video"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   allowFullScreen
