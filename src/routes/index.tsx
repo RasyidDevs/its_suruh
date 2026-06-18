@@ -18,10 +18,22 @@ import {
   Mail,
   Instagram,
   Menu,
+  ExternalLink,
+  FileText,
+  Lightbulb,
+  Palette,
+  Smartphone,
+  Award,
+  Play,
 } from "lucide-react";
 import { useState } from "react";
 import logoImg from "@/assets/logo its suruh.png";
 import heroImg from "@/assets/hero-students.jpg";
+import rasyidImg from "@/assets/team/Muh. Rasyid Bomantoro Setya Putra.png";
+import devinImg from "@/assets/team/Devin Alif Fansyah.png";
+import rafifImg from "@/assets/team/Muh. Rafif Sabililah.png";
+import choirunnisaImg from "@/assets/team/Choirunnisa Irianti.png";
+import afisyaImg from "@/assets/team/Afisya Nasywa.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -102,6 +114,125 @@ const missions = [
   "Memberikan peluang penghasilan tambahan yang fleksibel bagi mahasiswa ITS.",
 ];
 
+const designSteps = [
+  {
+    number: 1,
+    title: "Needfinding",
+    description: "Menggali kebutuhan pengguna melalui riset mendalam",
+    icon: Lightbulb,
+    color: "from-purple-500 to-pink-500",
+    bgColor: "bg-purple-500/10 border-purple-500/20",
+    links: [
+      {
+        label: "Needfinding Document",
+        url: "https://drive.google.com/file/d/1-RWle7sXUUmdBLfq5MEB5DcvulX3zk5d/view?usp=sharing",
+      },
+    ],
+  },
+  {
+    number: 2,
+    title: "POV & Experience Prototype",
+    description: "Mendefinisikan Point of View dan membuat prototype pengalaman",
+    icon: Lightbulb,
+    color: "from-blue-500 to-cyan-500",
+    bgColor: "bg-blue-500/10 border-blue-500/20",
+    links: [
+      {
+        label: "POV & Experience Prototype",
+        url: "https://drive.google.com/file/d/1Q9fCM0-v9W1Y1ETUYbsQptv62_0nzTyy/view?usp=sharing",
+      },
+    ],
+  },
+  {
+    number: 3,
+    title: "Concept Video & PPT",
+    description: "Presentasi konsep produk melalui video dan slide",
+    icon: Sparkles,
+    color: "from-green-500 to-emerald-500",
+    bgColor: "bg-green-500/10 border-green-500/20",
+    links: [
+      {
+        label: "Concept Video PPT",
+        url: "https://drive.google.com/file/d/1p-a2bfvkS1NP15F13o58Cxs21kdHliai/view?usp=drive_link",
+      },
+      {
+        label: "Concept Video",
+        url: "https://drive.google.com/file/d/10tpsrY4TSyAj0bByxbUVEbTKMZyo7GeL/view?usp=drive_link",
+      },
+    ],
+  },
+  {
+    number: 4,
+    title: "LoFi (Low Fidelity)",
+    description: "Wireframe dan layout konsep desain awal",
+    icon: Palette,
+    color: "from-orange-500 to-red-500",
+    bgColor: "bg-orange-500/10 border-orange-500/20",
+    links: [
+      {
+        label: "LoFi Wireframe",
+        url: "https://app.visily.ai/projects/2b5dd521-9ad7-490e-9b23-295910273945/boards/2606467",
+      },
+    ],
+  },
+  {
+    number: 5,
+    title: "Med-Fi (Medium Fidelity)",
+    description: "Desain dengan detail dan interaksi yang lebih terstruktur",
+    icon: Smartphone,
+    color: "from-indigo-500 to-blue-500",
+    bgColor: "bg-indigo-500/10 border-indigo-500/20",
+    links: [
+      {
+        label: "Med-Fi Design",
+        url: "https://www.figma.com/proto/EV0okwVGLoRADx1G2NzyMY/ITSuruh?node-id=0-1&t=Qp91a7Aw3SeUkeuw-1",
+      },
+    ],
+  },
+  {
+    number: 6,
+    title: "Laporan Heuristics",
+    description: "Evaluasi desain berdasarkan prinsip usability dan heuristics",
+    icon: CheckCircle2,
+    color: "from-teal-500 to-cyan-500",
+    bgColor: "bg-teal-500/10 border-teal-500/20",
+    links: [
+      {
+        label: "Laporan Heuristics",
+        url: "https://drive.google.com/file/d/1o8EMxaD8MQMihk3PKKWnFm6jDRT9XAYl/view?usp=sharing",
+      },
+    ],
+  },
+  {
+    number: 7,
+    title: "HiFi (High Fidelity)",
+    description: "Desain final dengan visual dan animasi lengkap",
+    icon: Smartphone,
+    color: "from-pink-500 to-rose-500",
+    bgColor: "bg-pink-500/10 border-pink-500/20",
+    links: [
+      {
+        label: "HiFi Design",
+        url: "https://www.figma.com/proto/LHxfemvU5gImKqmbLnIjJp/ITSuruh--Copy-?node-id=0-1&t=xWkNGyYoaJ95crVU-1",
+      },
+    ],
+  },
+  {
+    number: 8,
+    title: "Poster & Pitch Slide",
+    description: "Marketing materials dan presentasi pitch produk",
+    icon: Award,
+    color: "from-yellow-500 to-orange-500",
+    bgColor: "bg-yellow-500/10 border-yellow-500/20",
+    links: [
+      {
+        label: "Poster & Pitch Slide",
+        url: "https://canva.link/wubg0owwp1agxy3",
+      },
+    ],
+  },
+];
+
 function Landing() {
   const [open, setOpen] = useState(false);
   const navLinks = [
@@ -109,6 +240,9 @@ function Landing() {
     { href: "#layanan", label: "Layanan" },
     { href: "#cara-kerja", label: "Cara Kerja" },
     { href: "#visi-misi", label: "Visi & Misi" },
+    { href: "#design-process", label: "Design Process" },
+    { href: "#demo", label: "Demo" },
+    { href: "#our-team", label: "Our Team" },
     { href: "#kontak", label: "Kontak" },
   ];
 
@@ -431,6 +565,277 @@ function Landing() {
         </div>
       </section>
 
+      {/* DESIGN PROCESS */}
+      <section id="design-process" className="py-20 md:py-32 bg-muted/20">
+        <div className="mx-auto max-w-7xl px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+            className="text-center mb-16"
+          >
+            <span className="inline-flex items-center gap-2 rounded-full bg-white/10 border border-white/20 px-4 py-1.5 text-xs font-medium backdrop-blur text-primary">
+              <Lightbulb className="h-3.5 w-3.5" /> Design Journey
+            </span>
+            <h2 className="mt-6 text-3xl md:text-4xl font-bold mb-4">
+              Design Process <span className="text-secondary">ITSuruh</span>
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Dari riset mendalam hingga produk final yang siap launch. Lihat setiap tahap desain
+              ITSuruh di sini.
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 gap-8 mb-16">
+            {designSteps.map((step, idx) => {
+              const Icon = step.icon;
+              const isEven = idx % 2 === 0;
+
+              return (
+                <motion.div
+                  key={step.number}
+                  initial={{ opacity: 0, y: 24 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: idx * 0.08 }}
+                  className="border border-border rounded-2xl p-8 hover:shadow-lg transition-shadow"
+                >
+                  <div className="flex items-center gap-4 mb-6">
+                    <div
+                      className={`h-14 w-14 rounded-full bg-gradient-to-br ${step.color} flex items-center justify-center text-white`}
+                    >
+                      <span className="text-xl font-bold">{step.number}</span>
+                    </div>
+                    <Icon className="h-6 w-6 text-secondary" />
+                  </div>
+
+                  <h3 className="text-2xl font-bold mb-3">{step.title}</h3>
+                  <p className="text-base text-muted-foreground mb-6">{step.description}</p>
+
+                  <div className="space-y-2">
+                    {step.links.map((link, linkIdx) => (
+                      <a
+                        key={linkIdx}
+                        href={link.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-semibold transition ${
+                          link.disabled
+                            ? "bg-muted text-muted-foreground cursor-not-allowed opacity-50"
+                            : "bg-primary text-primary-foreground hover:bg-primary/90 shadow-md hover:shadow-lg"
+                        }`}
+                      >
+                        <FileText className="h-3.5 w-3.5" />
+                        {link.label}
+                        {!link.disabled && <ExternalLink className="h-3.5 w-3.5" />}
+                      </a>
+                    ))}
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
+
+          <div className="grid md:grid-cols-4 gap-4">
+            {[
+              { title: "Research", subtitle: "Needfinding & POV" },
+              { title: "Conceptualize", subtitle: "Video & Concept" },
+              { title: "Design", subtitle: "LoFi → Med-Fi → HiFi" },
+              { title: "Validate", subtitle: "Heuristics & Pitch" },
+            ].map((phase, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: idx * 0.1 }}
+                className="bg-background border border-border rounded-xl p-6 text-center hover:shadow-md transition-shadow"
+              >
+                <div className="h-10 w-10 rounded-full bg-primary/20 flex items-center justify-center mx-auto mb-3">
+                  <span className="font-bold text-primary text-sm">{idx + 1}</span>
+                </div>
+                <h4 className="font-bold text-base mb-1">{phase.title}</h4>
+                <p className="text-xs text-muted-foreground">{phase.subtitle}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* DEMO APPLICATION */}
+      <section id="demo" className="py-24 md:py-32 bg-primary text-primary-foreground relative overflow-hidden">
+        <div className="absolute -top-32 -right-24 w-[500px] h-[500px] rounded-full bg-secondary/20 blur-3xl" />
+        <div className="absolute -bottom-24 -left-16 w-[400px] h-[400px] rounded-full bg-tertiary/15 blur-3xl" />
+        <div className="mx-auto max-w-7xl px-6 relative">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="text-center mb-16"
+          >
+            <span className="inline-flex items-center gap-2 rounded-full bg-white/10 border border-white/20 px-4 py-1.5 text-xs font-medium backdrop-blur">
+              <Play className="h-3.5 w-3.5 text-secondary" /> Demo Application
+            </span>
+            <h2 className="mt-6 text-3xl md:text-5xl font-bold mb-4">
+              Demo <span className="text-tertiary">Application</span>
+            </h2>
+            <p className="text-lg text-white/75 max-w-2xl mx-auto">
+              Lihat bagaimana ITSuruh bekerja dalam aksi nyata. Tonton demo aplikasi dan jelajahi
+              materi presentasi kami.
+            </p>
+          </motion.div>
+
+          {/* YouTube Video Embed */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.15 }}
+            className="max-w-4xl mx-auto"
+          >
+            <div className="relative rounded-3xl overflow-hidden shadow-[var(--shadow-glow)] border border-white/20 bg-black">
+              <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
+                <iframe
+                  className="absolute inset-0 w-full h-full"
+                  src="https://www.youtube.com/embed/vAG8sofHnhA"
+                  title="ITSuruh Demo Video"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                />
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* OUR TEAM */}
+      <section id="our-team" className="py-24 md:py-32">
+        <div className="mx-auto max-w-7xl px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="text-center mb-16"
+          >
+            <span className="inline-flex items-center gap-2 rounded-full bg-white/10 border border-white/20 px-4 py-1.5 text-xs font-medium backdrop-blur text-primary">
+              <Users className="h-3.5 w-3.5" /> Meet The Team
+            </span>
+            <h2 className="mt-6 text-3xl md:text-4xl font-bold mb-4">
+              Our <span className="text-secondary">Team</span>
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Kenali tim kreatif di balik ITSuruh — setiap anggota berkontribusi penuh dalam pengembangan proyek dari awal hingga akhir.
+            </p>
+          </motion.div>
+
+          {/* Top row: 3 cards */}
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+            {[
+              {
+                name: "Rasyid Bomantoro",
+                role: "UI/UX Designer",
+                description: "Berkontribusi dalam keseluruhan proses pengembangan proyek, dengan spesialisasi pada perancangan UI/UX mulai dari low-fidelity wireframe, mid-fidelity design, user flow, high-fidelity prototype, hingga menjaga konsistensi visual antarmuka.",
+                image: rasyidImg,
+                gradient: "from-blue-500 to-cyan-500",
+                roleColor: "bg-blue-500/15 text-blue-700 border-blue-500/25",
+              },
+              {
+                name: "Devin Alif Fansyah",
+                role: "UI/UX Designer",
+                description: "Berkontribusi dalam keseluruhan proses pengembangan proyek, dengan spesialisasi pada pengembangan desain UI/UX dari tahap low-fidelity, mid-fidelity, perancangan layout, high-fidelity design, hingga prototype yang siap dipresentasikan.",
+                image: devinImg,
+                gradient: "from-indigo-500 to-purple-500",
+                roleColor: "bg-indigo-500/15 text-indigo-700 border-indigo-500/25",
+              },
+              {
+                name: "Rafif Sabililah",
+                role: "Pitching & Branding",
+                description: "Berkontribusi dalam keseluruhan proses pengembangan proyek, dengan spesialisasi pada penyusunan konsep branding, strategi komunikasi, identitas proyek, dan penyampaian ide saat pitching.",
+                image: rafifImg,
+                gradient: "from-amber-500 to-orange-500",
+                roleColor: "bg-amber-500/15 text-amber-700 border-amber-500/25",
+              },
+            ].map((member, i) => (
+              <motion.div
+                key={member.name}
+                initial={{ opacity: 0, y: 32 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-60px" }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                className="group relative rounded-3xl bg-card border border-border overflow-hidden hover:shadow-[var(--shadow-glow)] transition-all duration-500"
+              >
+                <div className={`h-1.5 bg-gradient-to-r ${member.gradient} w-full`} />
+                <div className="p-8">
+                  <div className="relative mx-auto w-36 h-36 mb-6">
+                    <div className={`absolute inset-0 rounded-full bg-gradient-to-br ${member.gradient} opacity-20 group-hover:opacity-40 transition-opacity duration-500 blur-xl scale-110`} />
+                    <div className="relative w-36 h-36 rounded-full overflow-hidden border-4 border-white shadow-lg">
+                      <img src={member.image} alt={member.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                    </div>
+                  </div>
+                  <h3 className="text-xl font-bold text-center text-foreground">{member.name}</h3>
+                  <div className="flex justify-center mt-3">
+                    <span className={`inline-flex items-center gap-1.5 rounded-full border px-4 py-1.5 text-xs font-semibold ${member.roleColor}`}>
+                      <Sparkles className="h-3 w-3" />
+                      {member.role}
+                    </span>
+                  </div>
+                  <p className="mt-5 text-sm text-muted-foreground text-center leading-relaxed">{member.description}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Bottom row: 2 cards centered */}
+          <div className="grid sm:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {[
+              {
+                name: "Choirunnisa",
+                role: "Documentation & Presentation Designer",
+                description: "Berkontribusi dalam keseluruhan proses pengembangan proyek, dengan spesialisasi pada penyusunan laporan, pembuatan materi presentasi, perapihan isi dokumen, dan dokumentasi proyek.",
+                image: choirunnisaImg,
+                gradient: "from-emerald-500 to-teal-500",
+                roleColor: "bg-emerald-500/15 text-emerald-700 border-emerald-500/25",
+              },
+              {
+                name: "Afisya Nasywa",
+                role: "Documentation & Presentation Designer",
+                description: "Berkontribusi dalam keseluruhan proses pengembangan proyek, dengan spesialisasi pada penyusunan laporan, pembuatan materi presentasi, perapihan isi dokumen, dan dokumentasi proyek.",
+                image: afisyaImg,
+                gradient: "from-rose-500 to-pink-500",
+                roleColor: "bg-rose-500/15 text-rose-700 border-rose-500/25",
+              },
+            ].map((member, i) => (
+              <motion.div
+                key={member.name}
+                initial={{ opacity: 0, y: 32 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-60px" }}
+                transition={{ duration: 0.5, delay: (i + 3) * 0.1 }}
+                className="group relative rounded-3xl bg-card border border-border overflow-hidden hover:shadow-[var(--shadow-glow)] transition-all duration-500"
+              >
+                <div className={`h-1.5 bg-gradient-to-r ${member.gradient} w-full`} />
+                <div className="p-8">
+                  <div className="relative mx-auto w-36 h-36 mb-6">
+                    <div className={`absolute inset-0 rounded-full bg-gradient-to-br ${member.gradient} opacity-20 group-hover:opacity-40 transition-opacity duration-500 blur-xl scale-110`} />
+                    <div className="relative w-36 h-36 rounded-full overflow-hidden border-4 border-white shadow-lg">
+                      <img src={member.image} alt={member.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                    </div>
+                  </div>
+                  <h3 className="text-xl font-bold text-center text-foreground">{member.name}</h3>
+                  <div className="flex justify-center mt-3">
+                    <span className={`inline-flex items-center gap-1.5 rounded-full border px-4 py-1.5 text-xs font-semibold ${member.roleColor}`}>
+                      <Sparkles className="h-3 w-3" />
+                      {member.role}
+                    </span>
+                  </div>
+                  <p className="mt-5 text-sm text-muted-foreground text-center leading-relaxed">{member.description}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA / KONTAK */}
       <section id="kontak" className="py-24 md:py-32">
         <div className="mx-auto max-w-5xl px-6">
@@ -493,6 +898,21 @@ function Landing() {
               <li>
                 <a href="#visi-misi" className="hover:text-primary">
                   Visi & Misi
+                </a>
+              </li>
+              <li>
+                <a href="#design-process" className="hover:text-primary">
+                  Design Process
+                </a>
+              </li>
+              <li>
+                <a href="#demo" className="hover:text-primary">
+                  Demo
+                </a>
+              </li>
+              <li>
+                <a href="#our-team" className="hover:text-primary">
+                  Our Team
                 </a>
               </li>
             </ul>

@@ -9,8 +9,26 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as TeamRouteImport } from './routes/team'
+import { Route as NeedfindingPovRouteImport } from './routes/needfinding-pov'
+import { Route as DesignProcessRouteImport } from './routes/design-process'
 import { Route as IndexRouteImport } from './routes/index'
 
+const TeamRoute = TeamRouteImport.update({
+  id: '/team',
+  path: '/team',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NeedfindingPovRoute = NeedfindingPovRouteImport.update({
+  id: '/needfinding-pov',
+  path: '/needfinding-pov',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DesignProcessRoute = DesignProcessRouteImport.update({
+  id: '/design-process',
+  path: '/design-process',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,28 +37,61 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/design-process': typeof DesignProcessRoute
+  '/needfinding-pov': typeof NeedfindingPovRoute
+  '/team': typeof TeamRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/design-process': typeof DesignProcessRoute
+  '/needfinding-pov': typeof NeedfindingPovRoute
+  '/team': typeof TeamRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/design-process': typeof DesignProcessRoute
+  '/needfinding-pov': typeof NeedfindingPovRoute
+  '/team': typeof TeamRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/design-process' | '/needfinding-pov' | '/team'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/design-process' | '/needfinding-pov' | '/team'
+  id: '__root__' | '/' | '/design-process' | '/needfinding-pov' | '/team'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  DesignProcessRoute: typeof DesignProcessRoute
+  NeedfindingPovRoute: typeof NeedfindingPovRoute
+  TeamRoute: typeof TeamRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/team': {
+      id: '/team'
+      path: '/team'
+      fullPath: '/team'
+      preLoaderRoute: typeof TeamRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/needfinding-pov': {
+      id: '/needfinding-pov'
+      path: '/needfinding-pov'
+      fullPath: '/needfinding-pov'
+      preLoaderRoute: typeof NeedfindingPovRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/design-process': {
+      id: '/design-process'
+      path: '/design-process'
+      fullPath: '/design-process'
+      preLoaderRoute: typeof DesignProcessRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -53,6 +104,9 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  DesignProcessRoute: DesignProcessRoute,
+  NeedfindingPovRoute: NeedfindingPovRoute,
+  TeamRoute: TeamRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
